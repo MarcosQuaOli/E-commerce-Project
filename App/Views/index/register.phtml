@@ -1,0 +1,28 @@
+<section class="page container">
+    <i></i><a href="/">Home</a>
+    <span>></span> Register
+</section>
+
+<section class="register container">
+    <form method="post" action="/registrar">
+        <h3>Register</h3>
+        <label>Nome *</label>
+            <input name="nome" type="text">
+        <label>Email address *</label>
+            <input name="email" type="text">
+        <label>Password *</label>
+            <input name="pass" type="password">
+        <label>Confirm Password *</label>
+            <input name="re-pass" type="password">
+        
+        <button type="submit">Register</button>
+
+        <?php if($this->view->erroCadastro) { ?>
+            <small>
+                *Erro ao tentar realizar o cadastro, verifique se os campos foram preenchidos corretamente.
+            </small>
+        <?php } ?>
+
+        <div class="btn-create"><a href="/login">Or login</a></div>
+    </form>
+</section>

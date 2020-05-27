@@ -1,0 +1,61 @@
+<section class="page container">
+    <i></i><a href="/">Home</a>
+    <span>></span>
+    <a href="/shop">Shop</a>
+    <span>></span> Shopping Cart
+</section>
+
+<section class="cart container">
+    <?php if($this->view->produtos_cart != '') { ?>
+        <div class="cart__table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Image</th>
+                        <th>Product Name</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Total</th>
+                        <th>x</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <?php foreach($this->view->produtos_cart as $produto) { ?>
+                        <tr class="produtos_cart">
+                            <td><img src="<?= $produto['img'] ?>"></td>
+                            <td><?= $produto['nome'] ?></td>
+                            <td>$<span class="price"><?= $produto['preco'] ?></span></td>
+                            <td class="quantidade_produto"><?= $produto['quantidade'] ?></td>
+                            <td>$<span class="re-price">60</span>.00</td>
+                            <td><a href="/remover_cart?id_produto=<?= $produto['id_produto'] ?>" class="btn-remove">x</a></td>
+                        </tr>
+                    <?php } ?>
+                </tbody>
+            </table>
+        </div>
+    <?php } else { ?>
+        <h2>Não tem produtos no carrinho</h2>
+    <?php } ?>
+
+    <div class="cart__total">
+        <div class="discount">
+            <a href="/shop">Continue Shopping</a>
+            <a href="/shopping_cart">Update Cart</a>
+
+            <h3>Discount Codes</h3>
+            <div>
+                <input type="text" placeholder="Enter your codes">
+                <button>Apply</button>
+            </div>
+        </div>
+
+        <div class="total">
+            <div>
+                <p>Subtotal <span class="price-abs">$<span class="price-total"></span>.00</span></p>
+                <p>Total <span class="price-abs">$<span class="price-total"></span>.00</span></p>
+            </div>
+            <a href="/checkout">Proceed to check out</a>
+        </div>
+    </div>
+</section>

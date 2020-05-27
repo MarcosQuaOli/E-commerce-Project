@@ -1,0 +1,107 @@
+<section class="page container">
+    <i></i><a href="/">Home</a>
+    <span>></span>
+    <a href="/shop">Shop</a>
+    <span>></span> Check Out
+</section>
+
+<section class="checkout container">
+    <div class="checkout__billing">
+        <a href="/login">Click Here To Login</a>
+
+        <h3>Billing Details</h3>
+
+        <form>
+            <div class="form-grid">
+                <div>
+                    <label>First Name<span>*</span></label>
+                    <input type="text">
+                </div>
+                
+                <div>
+                    <label>Last Name<span>*</span></label>
+                    <input type="text">
+                </div>
+            </div>
+
+            <label>Company Name</label>
+            <input type="text">
+
+            <label>Country<span>*</span></label>
+            <input type="text">
+
+            <label>Street Address<span>*</span></label>
+            <input type="text">
+            <input type="text">
+
+            <label>Postcode / ZIP (optional)</label>
+            <input type="text">
+
+            <label>Town / City<span>*</span></label>
+            <input type="text">
+
+            <div class="form-grid">
+                <div>
+                    <label>Email Address<span>*</span></label>
+                    <input type="email">
+                </div>
+
+                <div>
+                    <label>Phone<span>*</span></label>
+                    <input type="tel">
+                </div>
+            </div>
+
+            <label>
+                <input type="checkbox"> Create an account?
+            </label>
+        </form>
+    </div>
+
+    <div class="checkout__order">
+        <input class="coupon" type="text" placeholder="Enter Your Coupon Code">
+
+        <h3>Your Order</h3>
+        <div class="order-container">
+            <table>
+                <tr>
+                    <th>Product</th>
+                    <th>Total</th>
+                </tr>
+                
+                <?php if($this->view->produtos_cart != '') { ?>
+                    <?php foreach($this->view->produtos_cart as $produto) { ?>
+                        <tr>
+                            <td><?= $produto['nome'] ?> X <?= $produto['quantidade'] ?></td>
+                            <td>$<span class="re-price"><?= $produto['preco'] * $produto['quantidade'] ?></span>.00</td>
+                        </tr>
+                    <?php } ?>
+                <?php } ?>    
+
+                <tr>
+                    <td>Subtotal</td>
+                    <td>$<span class="price-total"></span>.00</td>
+                </tr>
+
+                <tr>
+                    <td>Total</td>
+                    <td>$<span class="price-total"></span>.00</td>
+                </tr>
+            </table>
+
+            <div class="payment">
+                <label>
+                    <input type="radio" name="payment"> Cheque Payment
+                </label>
+
+                <label>
+                    <input type="radio" name="payment"> Paypal
+                </label>
+            </div>
+
+            <div class="btn">
+                <button>Place Order</button>
+            </div>
+        </div>
+    </div>
+</section>

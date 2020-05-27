@@ -1,0 +1,30 @@
+<section class="page container">
+    <i></i><a href="/">Home</a>
+    <span>></span> Login
+</section>
+
+<section class="login container">
+    <form method="post" action="/autenticar">
+        <h3>Login</h3>
+        <label>Email address *</label>
+            <input name="email" type="text">
+        <label>Password *</label>
+            <input name="pass" type="password">
+        <div class="check">
+            <label>
+                <input type="checkbox">Save Password
+            </label>
+
+            <a href="#">Forget your Password</a>
+        </div>
+        <button type="submit">Sign in</button>
+
+        <?php if($this->view->login == 'erro') { ?>
+            <div class="row">
+                <small>* E-mail e ou senha inválido(s)</small>
+            </div>
+		<?php } ?>
+
+        <div class="btn-create"><a href="/register">Or create an account</a></div>
+    </form>
+</section>
