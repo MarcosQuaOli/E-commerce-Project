@@ -1,0 +1,39 @@
+.top {
+    border-bottom: 1px solid #ddd;
+    padding: 0.8rem 0;
+    
+    &__left {
+        float: left;
+        display: none;
+        border-right: 1px solid #ddd;
+
+        @media (min-width: 992px) {
+            display: inline-block;
+        }
+    }
+
+    &__right {
+        float: right;
+    }
+
+    &__social {
+        display: none;
+        border-right: 1px solid #ddd;
+        padding-right: .5rem;
+
+        @media (min-width: 768px) {
+            display: inline-block;
+        }
+    }
+
+    &__user {
+        display: inline-block;
+    }
+
+    &__lang {
+        margin: 0 1rem;
+        border: none;
+        cursor: pointer;
+        text-transform: uppercase;
+    }
+}

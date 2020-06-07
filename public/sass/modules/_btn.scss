@@ -1,0 +1,39 @@
+.btn {    
+    padding: .8rem 1rem;
+    background-color: $color-primary;
+    color: #fff;
+    border: 1px solid $color-primary;
+    text-transform: uppercase;
+    font-size: .9rem;
+    font-weight: bold;
+    cursor: pointer;
+
+    &__input {
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;        
+        cursor: pointer;
+        border: none;
+    }
+
+    &__menu {        
+        @media (min-width: 768px) {
+            display: none;
+        }
+    }
+
+    &--size-sm {
+        padding: .5rem;
+    }
+
+    &--block {
+        display: block;
+        width: 100%;
+    }
+
+    &--bg-black {
+        background-color: #000;
+        border-color: #000;
+    }
+}

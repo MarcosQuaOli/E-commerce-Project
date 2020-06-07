@@ -17,7 +17,6 @@
         <script src="js/menu.js"></script>
         <script src="js/cart-total.js"></script>
         <script src="js/dropdown.js"></script>
-        <script src="js/dropdown-bag.js"></script>
         <script src="js/slider.js"></script>
         <script src="js/dropdown-faq.js"></script>
         <script src="js/product-spec.js"></script>
@@ -26,34 +25,34 @@
 
 	<body>
 		<header class="header">
-            <div class="header__first">
-                <div class="container">
-                    <div class="header__addr">
-                        <i class="fas fa-envelope"></i><span>hello.colorlib@gmail.com</span>
-                        <i class="fas fa-phone"></i><span>+65 11.188.888</span>
+            <div class="top">
+                <div class="page__inner">
+                    <div class="top__left">
+                        <i class="fas fa-envelope"></i><span class="mx-0-5">hello.colorlib@gmail.com</span>
+                        <i class="fas fa-phone"></i><span class="mx-0-5">+65 11.188.888</span>
                     </div>
 
-                    <div class="header__login">
-                        <div class="header__login__social">
-                            <a href="#"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#"><i class="fab fa-twitter"></i></a>
-                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="#"><i class="fab fa-pinterest"></i></a>
+                    <div class="top__right">
+                        <div class="top__social">
+                            <a class="link" href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a class="link" href="#"><i class="fab fa-twitter"></i></a>
+                            <a class="link" href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a class="link" href="#"><i class="fab fa-pinterest"></i></a>
                         </div>
 
-                        <div>
-                            <select>
+                        <div class="top__user">
+                            <select class="top__lang">
                                 <option value="english"><img src="img/flag-1.jpg">English</option>
                                 <option value="german"><img src="img/flag-2.jpg">German</option>
                             </select> 
                             
-                            <div>
+                            <div class="top__user">
                                 <?php if($this->view->autentica == false) { ?>
-                                    <a href="/login">Login</a>
+                                    <a class="link" href="/login">Login</a>
                                 <?php } ?>
                                 
                                 <?php if($this->view->autentica) { ?>
-                                    <ul class="user-drop">
+                                    <ul class="">
                                         <li>
                                             <i class="fas fa-user"></i><span><?= $_SESSION['nome'] ?></span>
                                             <ul>
@@ -74,86 +73,94 @@
                 </div>              
             </div>
             
-            <div class="header__search container">
-                <div class="logo">
-                    <a href="#">Fashi<span>.</span></a>
+            <div class="logo page__inner">
+                <div class="logo__text">
+                    <a class="logo__link" href="#">Fashi<span class="text-primary">.</span></a>
                 </div>
 
                 <div class="search">
-                    <input type="text" placeholder="What do you need?" />
-                    <button type="submit"><i class="fas fa-search"></i></button>
+                    <input class="input" type="text" placeholder="What do you need?" />
+                    <button class="btn btn__input" type="submit"><i class="fas fa-search"></i></button>
                 </div>
 
                 <div class="bag">
-                    <div>
-                        <a class="icons" href="#"><i class="far fa-heart"><span>1</span></i></a>
-                        <a class="icons bag-icon" href="#"><i class="fas fa-shopping-bag"><span>3</span></i></a>
+                    <div class="bag--py-0-5 dropdown__hover">
+                        <a class="link link--rel" href="#"><i class="far fa-heart"><span class="link__numb">1</span></i></a>
+                        <a class="link link--rel" href="/shopping_cart"><i class="fas fa-shopping-bag"><span class="link__numb">3</span></i></a>
                         <span>$150.00</span>
                         
-                        <div class="bag-dropdown">
-                            <div class="bag-itens">
+                        <div class="dropdown dropdown__bag dropdown--right">
+                            <div class="bag__itens">
                                 <img src="img/select-product-1.jpg">
-                                <div>
-                                    <p><span>$60.00 x 1</span></p>
+                                <div class="bag__details">
+                                    <p><span class="text-primary">$60.00 x 1</span></p>
                                     <p>Kabino Bedside Table</p>
                                 </div>
-                                <div><a href="#">X</a></div>
+                                <div class="bag__details"><a class="link" href="#">X</a></div>
                             </div>
 
-                            <div class="bag-total">
-                                <p>Total: <span>$120.00</span></p>
-                                <button>View Card</button>
-                                <button>Check Out</button>
+                            <div class="bag__total text-primary">
+                                <p class="flex my-1">Total: <span>$120.00</span></p>
+                                <button class="btn btn--bg-black btn--block my-1">View Card</button>
+                                <button class="btn btn--block my-1">Check Out</button>
                             </div>
                         </div>
                     </div>
                     
-                    <div class="btn-menu">
-                        <button><span>Menu</span><i class="fas fa-bars"></i></button>
+                    <div>
+                        <button class="btn btn--size-sm btn__menu">
+                            <span>Menu</span>
+                            
+                            <div class="bar-btn header__link">
+                                <span class="bar-btn__line"></span>
+                                <span class="bar-btn__line"></span>
+                                <span class="bar-btn__line"></span>
+                            </div>
+                        </button>
                     </div>
                 </div>
             </div>
 
-            <nav class="header__navbar">
-                <div class="navbar__container container">
-                    <div class="department">
+            <nav class="navbar">
+                <div class="grid grid--col-1-2 page__inner">
+                    <div class="navbar__department">
                         <ul>
-                            <li><a class="department__btn" href="#"><i class="fas fa-bars"></i>All Departments<i class="fas fa-arrow-down"></i></a>
-                                <ul class="department__dropdown">
-                                    <li><a href="#">Men’s Clothing</a></li>
-                                    <li><a href="#">Underwear</a></li>
-                                    <li><a href="#">Kid's Clothing</a></li>
-                                    <li><a href="#">Brand Fashion</a></li>
-                                    <li><a href="#">Accessories/Shoes</a></li>
-                                    <li><a href="#">Luxury Brands</a></li>
-                                    <li><a href="#">Brand Outdoor Apparel</a></li>
+                            <li class="dropdown__hover"><a class="link__menu link--block" href="#"><i class="fas fa-bars mx-0-5"></i>All Departments<i class="fas fa-arrow-down mx-0-5"></i></a>
+                                <ul class="dropdown dropdown--left dropdown--right">
+                                    <li><a class="link__menu link__menu--dep" href="#">Men’s Clothing</a></li>
+                                    <li><a class="link__menu link__menu--dep" href="#">Underwear</a></li>
+                                    <li><a class="link__menu link__menu--dep" href="#">Kid's Clothing</a></li>
+                                    <li><a class="link__menu link__menu--dep" href="#">Brand Fashion</a></li>
+                                    <li><a class="link__menu link__menu--dep" href="#">Accessories/Shoes</a></li>
+                                    <li><a class="link__menu link__menu--dep" href="#">Luxury Brands</a></li>
+                                    <li><a class="link__menu link__menu--dep" href="#">Brand Outdoor Apparel</a></li>
                                 </ul>
                             </li>                      
                         </ul>
                     </div>
 
-                    <ul class="nav-menu">
-                        <li><a href="/">Home</a></li>
-                        <li><a href="/shop">Shop</a></li>
-                        <li class="dropdown-link"><a href="#">Collection<i class="fas fa-arrow-right"></i></a>
-                            <ul class="dropdown">
-                                <li><a href="#">Men's</a></li>
-                                <li><a href="#">Women's</a></li>
-                                <li><a href="#">Kid's</a></li>
+                    <ul class="navbar__menu flex--justify-end">
+                        <li><a class="link__menu link__menu--nav" href="/">Home</a></li>
+                        <li><a class="link__menu link__menu--nav" href="/shop">Shop</a></li>
+                        <li class="link--rel btn-dropdown dropdown__hover"><a class="link__menu link__menu--nav" href="#">Collection<i class="fas fa-arrow-right fa-sm mx-0-5"></i></a>
+                            <ul class="dropdown dropdown__menu dropdown--right">
+                                <li><a class="link__menu link--pl-2 link__menu--nav" href="#">Men's</a></li>
+                                <li><a class="link__menu link--pl-2 link__menu--nav" href="#">Women's</a></li>
+                                <li><a class="link__menu link--pl-2 link__menu--nav" href="#">Kid's</a></li>
                             </ul>
                         </li>
-                        <li><a href="/blog">Blog</a></li>
-                        <li><a href="/contact">Contact</a></li>
-                        <li class="dropdown-link"><a class="last" href="#">Pages<i class="fas fa-arrow-right"></i></a>
-                            <ul class="dropdown">
-                                <li><a href="/blog_details">Blog Details</a></li>
-                                <li><a href="/shopping_cart">Shopping Cart</a></li>
-                                <li><a href="/checkout">Checkout</a></li>
-                                <li><a href="/faq">Faq</a></li>
+                        <li><a class="link__menu link__menu--nav" href="/blog">Blog</a></li>
+                        <li><a class="link__menu link__menu--nav" href="/contact">Contact</a></li>
+                        <li class="link--rel btn-dropdown dropdown__hover"><a class="link__menu link__menu--nav link--no-border"href="#">Pages<i class="fas fa-arrow-right fa-sm mx-0-5"></i></a>
+                            <ul class="dropdown dropdown__menu dropdown--right">
+                                <li><a class="link__menu link--pl-2 link__menu--nav" href="/blog_details">Blog Details</a></li>
+                                <li><a class="link__menu link--pl-2 link__menu--nav" href="/shopping_cart">Shopping Cart</a></li>
+                                <li><a class="link__menu link--pl-2 link__menu--nav" href="/checkout">Checkout</a></li>
+                                <li><a class="link__menu link--pl-2 link__menu--nav" href="/faq">Faq</a></li>
 
                                 <?php if(!$this->view->autentica) { ?>
-                                    <li><a href="/register">Register</a></li>
-                                    <li><a href="/login">Login</a></li>
+                                    <li><a class="link__menu link--pl-2 link__menu--nav" href="/register">Register</a></li>
+                                    <li><a class="link__menu link--pl-2 link__menu--nav" href="/login">Login</a></li>
                                 <?php } ?>
                             </ul>
                         </li>

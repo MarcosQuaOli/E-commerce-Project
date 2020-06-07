@@ -1,0 +1,58 @@
+.link {
+    color: #212529;
+    margin-left: .6rem;
+    margin-right: .6rem;      
+
+    &__numb {
+        background-color: #e7ab3c;
+        color: #fff;
+        position: absolute;
+        right: -8px;
+        top: -8px;
+        height: 14px;
+        width: 14px;
+        line-height: 14px;
+        border-radius: 50%;
+        text-align: center;
+        font-size: .7rem;
+    }
+
+    &__menu {
+        color: #fff;
+
+        &--dep {
+            color: #212529;
+            display: block;
+            padding: 0.6rem 0;
+        }
+
+        &--nav {
+            display: block;
+            padding: .6rem 1rem;
+
+            @media (min-width: 768px) {
+                padding: 1rem;
+                border-right: 1px solid #ccc;
+            }
+        }        
+    }  
+    
+    &--rel {
+        position: relative;
+        z-index: 5;
+    }
+
+    &--pl-2 {
+        padding-left: 2rem;
+    }
+
+    &--no-border {
+        border: none;
+    }
+
+    &--block {
+        display: block;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+}

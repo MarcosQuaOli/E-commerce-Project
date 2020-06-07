@@ -1,0 +1,31 @@
+.bag {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+    position: relative;   
+    
+    &--py-0-5 {
+        padding-top: .5rem;
+        padding-bottom: .5rem;
+
+        @media (min-width: 768px) {
+            padding: 0;            
+        }
+    }
+
+    &__itens {
+        display: grid;
+        grid-template-columns: 1fr 3fr 1fr;
+        margin-bottom: 1.5rem;
+    }
+
+    &__details {
+        justify-self: center;
+        align-self: center;
+    }
+
+    &__total {
+        border-top: 1px solid #ddd;
+        min-width: 350px;
+    }
+}

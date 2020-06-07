@@ -1,0 +1,19 @@
+.logo {
+
+    &__text {
+        text-align: center;
+        padding-top: .3rem;
+    }
+
+    &__link {
+        color: #212529;
+        font-size: 1.8rem;
+        font-weight: bold;
+    }
+    
+    @media (min-width: 768px) {
+        display: flex;
+        justify-content: space-between;
+        padding: 2rem 3vw;        
+    }
+}

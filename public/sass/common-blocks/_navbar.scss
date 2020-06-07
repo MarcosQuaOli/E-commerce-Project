@@ -1,0 +1,28 @@
+.navbar {
+
+    @media (min-width: 768px) {
+        background-color: #212529;
+    }
+
+    &__department {
+        display: none;
+        position: relative;
+        background-color: #3b3b3b;
+
+        @media (min-width: 768px) {
+            display: block;
+            text-align: center;
+        }
+    }
+
+    &__menu {
+        background-color: #212529;
+        margin: .5rem 0;
+        display: none;
+
+        @media (min-width: 768px) {
+            display: flex;
+            margin: 0;
+        }
+    }
+}

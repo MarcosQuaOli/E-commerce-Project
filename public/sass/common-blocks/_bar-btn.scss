@@ -1,0 +1,29 @@
+.bar-btn {
+	cursor: pointer;
+    position: relative;
+    height: 12px;
+    display: inline-block;
+    width: 20px;
+    margin-left: .5rem; 
+	  	
+	&__line {
+		position: absolute;
+		height: 3px;
+		border-radius: 10px;
+		width: 100%;
+		display: block;
+		background-color: #fff; 
+	}
+	
+	&__line:first-child {
+		top: 0;
+	}
+	
+	&__line:nth-child(2) {
+		top: 50%;
+	}
+	
+	&__line:last-child {
+		top: 100%;
+	}	
+}

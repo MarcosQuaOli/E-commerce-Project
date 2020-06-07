@@ -6,6 +6,10 @@
     justify-content: start;
   }
 
+  &--justify-end {
+    justify-content: flex-end;
+  }
+
   &--relative {
     position: relative;
   }
