@@ -1,0 +1,19 @@
+.box {
+    
+    &__outline {
+        font-size: 1.6rem;
+        font-weight: bold;
+        background-color: #fff;
+        padding: .6rem 1.5rem;
+        border-radius: 2px;       
+        transition: .3s ease-in-out;
+    }
+
+    &--hover {
+
+        &:hover span {
+            outline: 10px solid rgba(255, 255, 255, 0.4);
+            outline-offset: 20px;
+        }
+    }
+}

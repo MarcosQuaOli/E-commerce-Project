@@ -1,7 +1,7 @@
 $(document).ready(() => {   
     $('.btn-dropdown').click((e) => { 
     
-        if($(window).width() < 768) {
+        if($(window).width() < 992) {
             $dropdown = $(e.currentTarget).children('.dropdown__menu');
             $arrow = $(e.currentTarget).find('i');
 
@@ -22,7 +22,7 @@ $(document).ready(() => {
         }    
     })
       
-    if(window.innerWidth > 768) {
+    if(window.innerWidth >= 992) {
     
         $('.dropdown__hover').on('mouseenter mouseleave', (e) => {
       

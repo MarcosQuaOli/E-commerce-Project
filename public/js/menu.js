@@ -1,5 +1,5 @@
 $(document).ready(() => {
-    if(window.innerWidth > 768) {
+    if(window.innerWidth >= 992) {
         $('.btn-dropdown i').removeClass();
     }
 
@@ -8,7 +8,7 @@ $(document).ready(() => {
     })
 
     $(window).resize((e) => {
-        if(window.innerWidth >= 768) {
+        if(window.innerWidth >= 992) {
             $('.navbar__menu').css('display', 'flex');
             $('.btn-dropdown i').removeClass();
         } else {

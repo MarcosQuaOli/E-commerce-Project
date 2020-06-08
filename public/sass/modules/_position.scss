@@ -1,0 +1,15 @@
+.pos-rel {
+    position: relative;
+}
+
+.center-y {
+    @include centralizaY;
+}
+
+.center-xy {
+    @include centralizaXY;
+}
+
+.d-inline-block {
+    display: inline-block;
+}

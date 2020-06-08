@@ -1,0 +1,27 @@
+.img {
+    height: 670px;
+    position: relative;
+    background-position: top center;
+    background-repeat: no-repeat;
+
+    &__title {
+        color: #fff;
+        font-size: 3rem;
+        margin-bottom: 1rem;
+    }
+
+    &__link {
+        color: #fff;
+        border-bottom: 1px solid #fff;
+        padding-bottom: .5rem;
+        font-size: 1.2rem;
+    }
+
+    &--men {
+        background-image: url(../img/products/man-large.jpg);
+    }
+
+    &--women {
+        background-image: url(../img/products/women-large.jpg);
+    }
+}

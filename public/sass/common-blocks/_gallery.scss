@@ -1,0 +1,20 @@
+.gallery {
+    width: 80vw;
+
+    &__link {
+        display: inline-block;
+        padding: 0.2rem;
+        margin: 0 .5rem;
+        font-size: 1.2rem;
+        color: #b2b2b2;
+
+        &--active {
+            color: #212529;
+            border-bottom: 2px solid #212529;
+        }
+    }
+
+    @media (min-width: 992px) {
+        width: 50vw;
+    }
+}

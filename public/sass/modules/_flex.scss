@@ -1,16 +1,4 @@
 .flex {
   display: flex;
   justify-content: space-between;
-
-  &--justify-left {
-    justify-content: start;
-  }
-
-  &--justify-end {
-    justify-content: flex-end;
-  }
-
-  &--relative {
-    position: relative;
-  }
 }

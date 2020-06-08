@@ -29,13 +29,32 @@
         &--nav {
             display: block;
             padding: .6rem 1rem;
-
-            @media (min-width: 768px) {
-                padding: 1rem;
+            
+            @media (min-width: 992px) {
+                padding: 1rem 2rem;
                 border-right: 1px solid #ccc;
             }
         }        
     }  
+
+    &__social {
+        margin-right: .5rem;
+        margin-top: 1rem;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: #303030;
+        display: inline-grid;
+        align-content: center;
+        justify-content: center;
+        color: #f9f9f9;
+    }
+
+    &__inline {
+        color: #b2b2b2;
+        display: inline-block;
+        margin: .3rem 0;
+    }
     
     &--rel {
         position: relative;

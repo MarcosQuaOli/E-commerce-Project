@@ -1,0 +1,53 @@
+.product {
+    &__sale {
+        position: absolute;
+        top: 15px;
+        left: 0;
+        text-transform: uppercase;
+        color: #fff;
+        font-size: .8rem;
+        background-color: #76bc42;
+        padding: .2rem;
+    }
+
+    &__icon {
+        position: absolute;
+        color: #212529;
+        top: 15px;
+        right: 15px;
+        font-size: 1.4rem;
+    }
+
+    &__tag {
+        color: #b2b2b2;
+        letter-spacing: 1px;
+    }
+
+    &__name {
+        font-size: 1.4rem;
+        font-weight: 400;
+    }
+
+    &__price {
+        font-size: 1.2rem;
+        color: #e7ab3c;
+        font-weight: bold;
+
+        &--sale {
+            text-decoration: line-through;
+            color: #b2b2b2;
+            font-size: 0.9rem;
+        }
+    }
+
+    &__overlay {
+        opacity: 0; 
+        visibility: hidden;
+        transition: .3s ease-in-out;
+    }
+
+    &--hover:hover &__overlay {
+        opacity: 1; 
+        visibility: visible;
+    }
+}

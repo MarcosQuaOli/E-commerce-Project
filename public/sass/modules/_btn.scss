@@ -7,6 +7,7 @@
     font-size: .9rem;
     font-weight: bold;
     cursor: pointer;
+    display: inline-block;
 
     &__input {
         position: absolute;
@@ -18,7 +19,7 @@
     }
 
     &__menu {        
-        @media (min-width: 768px) {
+        @media (min-width: 992px) {
             display: none;
         }
     }
