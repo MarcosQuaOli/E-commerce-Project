@@ -1,0 +1,22 @@
+.blog {
+    &__date {
+        color: #b2b2b2;
+        margin-top: .5rem;
+        display: inline-block;
+    }
+
+    &__icon {
+        margin-right: .7rem;
+        color: #e7ab3c;
+
+        &:last-child {
+            margin-left: .7rem;
+        }
+    }
+
+    &__title {
+        color: #000;
+        text-transform: capitalize;
+        margin: 1rem 0;
+    }
+}

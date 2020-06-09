@@ -1,0 +1,17 @@
+.user {
+
+    &__link {
+        text-transform: uppercase;
+        text-decoration: underline;
+        letter-spacing: .5px;
+        color: #212529;
+    }
+
+    &__text {
+        color: #212529;
+    }
+
+    &__btn {
+        font-size: 1.2rem;
+    }
+}

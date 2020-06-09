@@ -1,106 +1,106 @@
-<section class="page container">
-    <i></i><a href="/">Home</a>
-    <span>></span>
-    <a href="/shop">Shop</a>
-    <span>></span> Check Out
+<section class="link-back page__inner">
+    <a class="link-back__btn" href="/">Home</a>
+    <span class="mx-0-5">></span>
+    <a class="link-back__btn" href="/">Shop</a>
+    <span class="mx-0-5">></span> Checkout
 </section>
 
-<section class="checkout container">
-    <div class="checkout__billing">
-        <a href="/login">Click Here To Login</a>
+<section class="page__inner page__section grid grid--col-2">
+    <div>
+        <a class="checkout__btn" href="/login">Click Here To Login</a>
 
-        <h3>Billing Details</h3>
+        <h3 class="title">Billing Details</h3>
 
         <form>
-            <div class="form-grid">
+            <div class="grid grid--col-2">
                 <div>
-                    <label>First Name<span>*</span></label>
-                    <input type="text">
+                    <label class="my-1 d-inline-block">First Name<span>*</span></label>
+                    <input class="input" type="text">
                 </div>
                 
                 <div>
-                    <label>Last Name<span>*</span></label>
-                    <input type="text">
+                    <label class="my-1 d-inline-block">Last Name<span>*</span></label>
+                    <input class="input" type="text">
                 </div>
             </div>
 
-            <label>Company Name</label>
-            <input type="text">
+            <label class="my-1 d-inline-block">Company Name</label>
+            <input class="input" type="text">
 
-            <label>Country<span>*</span></label>
-            <input type="text">
+            <label class="my-1 d-inline-block">Country<span>*</span></label>
+            <input class="input" type="text">
 
-            <label>Street Address<span>*</span></label>
-            <input type="text">
-            <input type="text">
+            <label class="my-1 d-inline-block">Street Address<span>*</span></label>
+            <input class="input" type="text">
 
-            <label>Postcode / ZIP (optional)</label>
-            <input type="text">
+            <label class="my-1 d-inline-block">Postcode / ZIP (optional)</label>
+            <input class="input" type="text">
 
-            <label>Town / City<span>*</span></label>
-            <input type="text">
+            <label class="my-1 d-inline-block">Town / City<span>*</span></label>
+            <input class="input" type="text">
 
-            <div class="form-grid">
+            <div class="grid grid--col-2">
                 <div>
-                    <label>Email Address<span>*</span></label>
-                    <input type="email">
+                    <label class="my-1 d-inline-block">Email Address<span>*</span></label>
+                    <input class="input" type="email">
                 </div>
 
                 <div>
-                    <label>Phone<span>*</span></label>
-                    <input type="tel">
+                    <label class="my-1 d-inline-block">Phone<span>*</span></label>
+                    <input class="input" type="tel">
                 </div>
             </div>
 
-            <label>
+            <label class="my-1 d-inline-block">
                 <input type="checkbox"> Create an account?
             </label>
         </form>
     </div>
 
-    <div class="checkout__order">
-        <input class="coupon" type="text" placeholder="Enter Your Coupon Code">
+    <div>
+        <input class="checkout__btn" type="text" placeholder="Enter Your Coupon Code">
 
-        <h3>Your Order</h3>
-        <div class="order-container">
-            <table>
+        <h3 class="title">Your Order</h3>
+
+        <div class="box">
+            <table class="table">
                 <tr>
-                    <th>Product</th>
-                    <th>Total</th>
+                    <th class="table--align-left">Product</th>
+                    <th class="table--align-right">Total</th>
                 </tr>
                 
                 <?php if($this->view->produtos_cart != '') { ?>
                     <?php foreach($this->view->produtos_cart as $produto) { ?>
                         <tr>
                             <td><?= $produto['nome'] ?> X <?= $produto['quantidade'] ?></td>
-                            <td>$<span class="re-price"><?= $produto['preco'] * $produto['quantidade'] ?></span>.00</td>
+                            <td class="table--align-right">$<span class="re-price"><?= $produto['preco'] * $produto['quantidade'] ?></span>.00</td>
                         </tr>
                     <?php } ?>
                 <?php } ?>    
 
                 <tr>
                     <td>Subtotal</td>
-                    <td>$<span class="price-total"></span>.00</td>
+                    <td class="table--align-right">$<span class="price-total"></span>.00</td>
                 </tr>
 
                 <tr>
                     <td>Total</td>
-                    <td>$<span class="price-total"></span>.00</td>
+                    <td class="table--align-right">$<span class="price-total"></span>.00</td>
                 </tr>
             </table>
 
-            <div class="payment">
-                <label>
+            <div class="my-1">
+                <label class="input__label">
                     <input type="radio" name="payment"> Cheque Payment
                 </label>
 
-                <label>
+                <label class="input__label">
                     <input type="radio" name="payment"> Paypal
                 </label>
             </div>
 
-            <div class="btn">
-                <button>Place Order</button>
+            <div class="page--center my-1">
+                <button class="btn btn--bg-black">Place Order</button>
             </div>
         </div>
     </div>

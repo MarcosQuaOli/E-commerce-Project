@@ -2,6 +2,16 @@
     font-size: 2.5rem;
     margin-top: .5rem;
     margin-bottom: .5rem;
+
+    &--center {
+        text-align: center;
+    }
+
+    &__line {
+        border-bottom: 3px solid #e7ab3c;
+        margin: 0 auto;
+        width: 70px;
+    }
     
     &__footer {
         color: #fff;

@@ -3,4 +3,10 @@
     padding: .8rem;
     border: 1px solid #f9f9f9;
     font-size: 1.2rem;
+
+    &__label {
+        display: block;
+        cursor: pointer;
+        margin: .5rem 0;
+    }
 }

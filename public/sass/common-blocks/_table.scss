@@ -1,0 +1,17 @@
+.table {
+    width: 100%;
+    border-collapse: collapse;
+
+    &--align-left {
+        text-align: left;
+    }
+
+    &--align-right {
+        text-align: right;
+    }
+
+    & td, & th{
+        padding-top: 1.5rem;
+        border-bottom: 2px solid #ddd;
+    }
+}

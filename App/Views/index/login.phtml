@@ -1,30 +1,36 @@
-<section class="page container">
-    <i></i><a href="/">Home</a>
-    <span>></span> Login
+<section class="link-back page__inner">
+    <a class="link-back__btn" href="/">Home</a>
+    <span class="mx-0-5">></span> Login
 </section>
 
-<section class="login container">
-    <form method="post" action="/autenticar">
-        <h3>Login</h3>
-        <label>Email address *</label>
-            <input name="email" type="text">
-        <label>Password *</label>
-            <input name="pass" type="password">
-        <div class="check">
-            <label>
-                <input type="checkbox">Save Password
-            </label>
+<section class="page__inner">
+    <div class="page__user page__section">
+        <form method="post" action="/autenticar">
+            <h3 class="title title--center">Login</h3>
 
-            <a href="#">Forget your Password</a>
-        </div>
-        <button type="submit">Sign in</button>
+            <label class="my-1 d-inline-block">Email address *</label>
+                <input class="input" name="email" type="text">
 
-        <?php if($this->view->login == 'erro') { ?>
-            <div class="row">
-                <small>* E-mail e ou senha inválido(s)</small>
+            <label class="my-1 d-inline-block">Password *</label>
+                <input class="input" name="pass" type="password">
+
+            <div class="flex my-1">
+                <label>
+                    <input type="checkbox">Save Password
+                </label>
+
+                <a class="user__text" href="#">Forget your Password</a>
             </div>
-		<?php } ?>
 
-        <div class="btn-create"><a href="/register">Or create an account</a></div>
-    </form>
+            <button class="btn btn--block user__btn" type="submit">Sign in</button>
+
+            <?php if($this->view->login == 'erro') { ?>
+                <div class="row">
+                    <small>* E-mail e ou senha inválido(s)</small>
+                </div>
+            <?php } ?>
+
+            <div class="page--center my-1"><a class="user__link" href="/register">Or create an account</a></div>
+        </form>
+    </div>
 </section>

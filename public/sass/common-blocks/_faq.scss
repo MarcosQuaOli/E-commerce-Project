@@ -1,0 +1,30 @@
+.faq {
+    &__btn {
+        color: #000;
+        text-transform: capitalize;
+        font-size: 1.3rem;
+        font-weight: bold;
+        display: block;
+        border: none;
+        cursor: pointer;
+        background-color: transparent;
+        text-align: left;
+    }
+
+    &__text {
+        margin: 1rem 0;
+        display: none;
+    }
+
+    &__icon {
+        margin-right: .6rem;
+        padding: .4rem;
+        background-color: #ddd;
+        font-size: .8rem;
+
+        &--active {
+            background-color: #e7ab3c;
+            color: #fff;
+        }
+    }
+}

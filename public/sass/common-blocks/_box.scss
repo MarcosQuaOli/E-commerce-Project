@@ -1,4 +1,6 @@
 .box {
+    border: 1px solid #ddd;
+    padding: .5rem 2rem;
     
     &__outline {
         font-size: 1.6rem;
@@ -14,6 +16,11 @@
         &:hover span {
             outline: 10px solid rgba(255, 255, 255, 0.4);
             outline-offset: 20px;
+        }
+
+        &:hover .overlay {
+            visibility: visible;
+            opacity: 1;
         }
     }
 }

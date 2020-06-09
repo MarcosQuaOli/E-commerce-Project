@@ -1,0 +1,15 @@
+.week {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    background: url(../img/time-bg.jpg) no-repeat;
+    background-size: cover;
+    background-position: top center;
+    text-align: center;
+    padding: 3rem 1rem;
+
+    &__content {
+        @media (min-width: 992px) {
+            width: 50%;
+        }
+    }
+}

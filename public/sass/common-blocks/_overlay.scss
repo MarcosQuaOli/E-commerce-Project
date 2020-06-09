@@ -1,0 +1,11 @@
+.overlay {
+    text-align: center;
+    color: #fff;
+    opacity: 0;
+    visibility: hidden;
+    transition: .3s ease-in-out;
+
+    &__link {
+        color: #fff;
+    }
+}
