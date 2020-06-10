@@ -86,18 +86,6 @@ class Route extends Bootstrap {
 			'action' => 'cadastro'
 		);
 
-		$routes['cadastro_produto'] = array(
-			'route' => '/cadastro_produto',
-			'controller' => 'indexController',
-			'action' => 'cadastroProduto'
-		);
-
-		$routes['registrar_produto'] = array(
-			'route' => '/registrar_produto',
-			'controller' => 'AppController',
-			'action' => 'registrarProduto'
-		);
-
 		$routes['produtos_cart'] = array(
 			'route' => '/produtos_cart',
 			'controller' => 'AppController',

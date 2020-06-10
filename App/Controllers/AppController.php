@@ -8,7 +8,7 @@ use MF\Model\Container;
 
 class AppController extends Action {
 
-  public function registrarProduto() {		
+  	/* public function registrarProduto() {		
 		$produto = Container::getModel('Produto');
 
 		$produto->__set('img', $_POST['img']);
@@ -22,7 +22,7 @@ class AppController extends Action {
 		$produto->salvar();
 
 		header('Location: /cadastro_produto');
-	} 
+	}  */
 
 	public function produtosCart() {
 		session_start();

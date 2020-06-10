@@ -24,6 +24,17 @@
         }
     }
 
+    &__box {
+        display: inline-block;
+        padding: 0.2rem .5rem;
+        border: 1px solid #b2b2b2;
+        margin: .5rem;
+    }
+
+    &--rounded {
+        border-radius: 5px;
+    }
+
     &--size-sm {
         padding: .5rem;
     }

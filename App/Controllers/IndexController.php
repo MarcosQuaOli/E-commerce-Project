@@ -175,11 +175,6 @@ class IndexController extends Action {
 		$this->validaAutenticacao();
 		$this->render('faq');
 	}
-	
-	public function cadastroProduto() {		
-		$this->validaAutenticacao();
-		$this->render('cadastro_produto');
-	}
 
 	public function registrar() {		
 		$this->validaAutenticacao();

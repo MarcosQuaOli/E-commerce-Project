@@ -1,4 +1,8 @@
 .product {
+    text-align: center;
+    cursor: pointer;
+    z-index: 5;
+
     &__sale {
         position: absolute;
         top: 15px;
@@ -16,9 +20,15 @@
         top: 15px;
         right: 15px;
         font-size: 1.4rem;
+
+        &--white {
+            color: #fff;
+        }
     }
 
     &__tag {
+        display: inline-block;
+        margin-top: .5rem;
         color: #b2b2b2;
         letter-spacing: 1px;
     }

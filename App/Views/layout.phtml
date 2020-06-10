@@ -58,18 +58,9 @@
                                 <?php } ?>
                                 
                                 <?php if($this->view->autentica) { ?>
-                                    <ul class="">
-                                        <li>
-                                            <i class="fas fa-user"></i><span><?= $_SESSION['nome'] ?></span>
-                                            <ul>
-                                                <li>
-                                                    <?php if($_SESSION['perfil_id'] == 1) { ?>
-                                                        <a href="/cadastro_produto">Cadastrar Produtos</a>
-                                                    <?php } ?>
-                                                </li>
-                                                <li><a href="/sair">Sair</a></li>
-                                            </ul>
-                                        </li>
+                                    <ul class="flex">
+                                        <li class="mx-0-5"><i class="fas fa-user mx-0-5"></i><span><?= $_SESSION['nome'] ?></span></li>
+                                        <li class="mx-0-5"><a href="/sair">Sair</a></li>
                                     </ul>                 
                                 <?php } ?>
                             </div>                        
@@ -205,7 +196,7 @@
             <div class="page__inner">
                 <div class="grid grid--footer py-2">
                     <div>
-                        <h3 class="title__footer">Fashi<span class="text-primary">.</span></h3>
+                        <h3 class="title-2 title--white">Fashi<span class="text-primary">.</span></h3>
                         <address>
                             Address: 60-49 Road 11378 New York
                         </address>
@@ -227,7 +218,7 @@
                     </div>
 
                     <div>
-                        <h3 class="title__footer">Information</h3>
+                        <h3 class="title-2 title--white">Information</h3>
                         <ul>
                             <li><a class="link__inline" href="#">About Us</a></li>
                             <li><a class="link__inline" href="/checkout">Checkout</a></li>
@@ -237,7 +228,7 @@
                     </div>
 
                     <div>
-                        <h3 class="title__footer">My Account</h3>
+                        <h3 class="title-2 title--white">My Account</h3>
                         <ul>
                             <li><a class="link__inline" href="">My Account</a></li>
                             <li><a class="link__inline" href="/contact">Contact</a></li>
@@ -247,7 +238,7 @@
                     </div>
 
                     <div>
-                        <h3 class="title__footer">Join Our Newsletter Now</h3>
+                        <h3 class="title-2 title--white">Join Our Newsletter Now</h3>
                         <p>Get E-mail updates about our latest shop and special offers.</p>
                         <div class="pos-rel my-1">
                             <input class="input" type="email" placeholder="Enter Your Mail">

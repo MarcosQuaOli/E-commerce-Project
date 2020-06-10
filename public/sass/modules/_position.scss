@@ -2,6 +2,10 @@
     position: relative;
 }
 
+.pos-abs {
+    position: absolute;
+}
+
 .center-y {
     @include centralizaY;
 }
@@ -10,6 +14,14 @@
     @include centralizaXY;
 }
 
+.right-0 {
+    right: 0;
+}
+
 .d-inline-block {
     display: inline-block;
+}
+
+.align-right {
+    text-align: right;
 }

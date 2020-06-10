@@ -1,20 +1,103 @@
-<section class="page container">
-    <i></i><a href="/">Home</a>
-    <span>></span>Shop
+<section class="link-back page__inner">
+    <a class="link-back__btn" href="/">Home</a>
+    <span class="mx-0-5">></span> Shop
 </section>
 
-<section class="shop container">
+<section class="page__inner page__section grid grid--col-1-3">
+    <div>
+        <?php if($this->view->categoria != '' || $this->view->tamanho != '' || $this->view->tag != '' || $this->view->preco != '') { ?>
+
+            <div class="mb-2">
+                <h3 class="title-2">Filtros Aplicados</h3>
+                <ul>
+                    <li>
+                        <?php if($this->view->categoria != '') {
+                            print("Categoria: " . $this->view->categoria) ?>
+                        
+                            <a class="mx-0-5 text-red" href="/shop?categoria=&tamanho=<?= $this->view->tamanho ?>&tag=<?= $this->view->tag ?>&preco=<?= $this->view->preco ?>">X</a>
+                        <?php } ?>
+                    </li>
+
+                    <li>
+                        <?php if($this->view->tamanho != '') {
+                            print("Tamanho: " . $this->view->tamanho) ?>
+
+                           <a class="mx-0-5 text-red" href="/shop?categoria=<?= $this->view->categoria ?>&tamanho=&tag=<?= $this->view->tag ?>&preco=<?= $this->view->preco ?>">X</a>
+                        <?php } ?>
+                    </li>
+
+                    <li>
+                        <?php if($this->view->tag != '') {
+                            print("Tag: " . $this->view->tag) ?>
+
+                           <a class="mx-0-5 text-red" href="/shop?categoria=<?= $this->view->categoria ?>&tamanho=<?= $this->view->tamanho ?>&tag=&preco=<?= $this->view->preco ?>">X</a>
+                        <?php } ?>
+                    </li>
+
+                    <li>
+                        <?php if($this->view->preco != '') {
+                            print("Preço: " . $this->view->preco) ?>
+
+                           <a class="mx-0-5 text-red" href="/shop?categoria=<?= $this->view->categoria ?>&tamanho=<?= $this->view->tamanho ?>&tag=<?= $this->view->tag ?>&preco=">X</a>
+                        <?php } ?>
+                    </li>
+                </ul>
+            </div>   
+            
+        <?php } ?>
+
+        <div class="mb-2">
+            <h3 class="title-2">Categories</h3>
+            <ul>
+                <li><a class="link--block" href="/shop?categoria=men&tamanho=<?= $this->view->tamanho ?>&tag=<?= $this->view->tag ?>&preco=<?= $this->view->preco ?>">Men</a></li>
+                <li><a class="link--block" href="/shop?categoria=woman&tamanho=<?= $this->view->tamanho ?>&tag=<?= $this->view->tag ?>&preco=<?= $this->view->preco ?>">Woman</a></li>
+                <li><a class="link--block" href="/shop?categoria=kid&tamanho=<?= $this->view->tamanho ?>&tag=<?= $this->view->tag ?>&preco=<?= $this->view->preco ?>">Kid</a></li>
+            </ul>
+        </div>
+
+        <div class="mb-2">
+            <h3 class="title-2">Price</h3>
+            <form method="post" action="/shop?categoria=<?= $this->view->categoria ?>&tamanho=<?= $this->view->tamanho ?>&tag=<?= $this->view->tag ?>">
+                <div class="mb-2">
+                    <input type="number" name="min" min="0" max="1000" placeholder="$00">
+                    <span class="mx-0-5">-</span>
+                    <input type="number" name="max" min="0" max="1000" placeholder="$90">
+                </div>
+
+                <button class="btn btn--size-sm btn--rounded" type="submit">Filter</button>
+            </form>
+        </div>    
+
+        <div class="mb-2">
+            <h3 class="title-2">Tamanho</h3>
+            <a class="btn__box" href="/shop?tamanho=s&categoria=<?= $this->view->categoria ?>&tag=<?= $this->view->tag ?>&preco=<?= $this->view->preco ?>">S</a>
+            <a class="btn__box" href="/shop?tamanho=m&categoria=<?= $this->view->categoria ?>&tag=<?= $this->view->tag ?>&preco=<?= $this->view->preco ?>">M</a>
+            <a class="btn__box" href="/shop?tamanho=l&categoria=<?= $this->view->categoria ?>&tag=<?= $this->view->tag ?>&preco=<?= $this->view->preco ?>">L</a>
+            <a class="btn__box" href="/shop?tamanho=xs&categoria=<?= $this->view->categoria ?>&tag=<?= $this->view->tag ?>&preco=<?= $this->view->preco ?>">XS</a>
+        </div>
+
+        <div class="mb-2">
+            <h3 class="title-2">Tags</h3>
+
+            <a class="btn__box" href="/shop?tag=porsche&tamanho=<?= $this->view->tamanho ?>&categoria=<?= $this->view->categoria ?>&preco=<?= $this->view->preco ?>">Porsche</a>
+            <a class="btn__box" href="/shop?tag=jeep&tamanho=<?= $this->view->tamanho ?>&categoria=<?= $this->view->categoria ?>&preco=<?= $this->view->preco ?>">Jeep</a>
+            <a class="btn__box" href="/shop?tag=ceda&tamanho=<?= $this->view->tamanho ?>&categoria=<?= $this->view->categoria ?>&preco=<?= $this->view->preco ?>">Ceda</a>
+            <a class="btn__box" href="/shop?tag=caminhonete&tamanho=<?= $this->view->tamanho ?>&categoria=<?= $this->view->categoria ?>&preco=<?= $this->view->preco ?>">Caminhonete</a>
+            <a class="btn__box" href="/shop?tag=caminhao&tamanho=<?= $this->view->tamanho ?>&categoria=<?= $this->view->categoria ?>&preco=<?= $this->view->preco ?>">Caminhao</a>
+        </div>
+    </div>
+
     <div class="shop__content"> 
-        <div class="content-top">
+        <div class="flex mb-2 pos-rel">
             <div>
                 <form method="post" action="/shop?categoria=<?= $this->view->categoria ?>&preco=<?= $this->view->preco ?>&tamanho=<?= $this->view->tamanho ?>&tag=<?= $this->view->tag ?>">                            
-                    <select name="sort" onchange="this.form.submit()">  
+                    <select class="input__select" name="sort" onchange="this.form.submit()">  
                         <option value="<?= $this->view->sort ?>">Sorting:</option>                          
                         <option value="high_price">Maior Preço</option>                      
                         <option value="low_price">Menor Preço</option>    
                     </select>
                                       
-                    <select name="show" onchange="this.form.submit()">  
+                    <select class="input__select" name="show" onchange="this.form.submit()">  
                         <option value="<?= $this->view->show ?>">Show:</option>    
                         <option value="5">5</option>                      
                         <option value="10">10</option>
@@ -22,7 +105,8 @@
                     </select>                    
                 </form>
             </div>
-            <div>
+
+            <div class="center-y right-0">
                 <p>
                     Show 
                         <?= ($this->view->num_page - $this->view->show) + $this->view->show ?>
@@ -35,125 +119,43 @@
             </div>
         </div>
 
-        <div class="shop__gallery">
+        <div class="grid grid--autofit-200">
             <?php foreach($this->view->produtos as $produto) { ?>
-                <div class="gallery-itens" id="<?= $produto['id'] ?>">
-                    <div class="gallery-img">
+                <div class="product" id="<?= $produto['id'] ?>">
+                    <div class="product--hover pos-rel">
                         <img src="<?= $produto['img'] ?>">
                         
-                        <div class="gallery-overlay">
-                            <a href="#"><i class="far fa-heart"></i></a>
+                        <div class="product__overlay">
+                            <a href="#"><i class="far fa-heart product__icon product__icon--white"></i></a>
                         </div>
                     </div>
 
-                    <div class="gallery-text">
-                        <small><?= $produto['tag'] ?></small>
-                        <h4><?= $produto['nome'] ?></h4>
-                        <p>$<?= $produto['preco'] ?></p>
+                    <div>
+                        <small class="product__tag"><?= $produto['tag'] ?></small>
+                        <h4 class="product__name"><?= $produto['nome'] ?></h4>
+                        <p class="product__price">$<?= $produto['preco'] ?></p>
                     </div>
                 </div>
             <?php } ?>            
         </div>
 
-        <div class="load">
-            <div>
-                <ul style="left: <?= $this->view->left ?>">
+        <div class="grid grid--content-center pos-rel py-2">
+            <div class="pagination__pages">
+                <ul class="flex" style="left: <?= $this->view->left ?>">
                     <?php 
                         $number = ceil($this->view->total_produtos[0] / $this->view->show);
                         for($i = 1; $i < $number + 1; $i++) {
                     ?>
-                        <li><a href="/shop?show=<?= $this->view->show ?>&sort=<?= $this->view->sort ?>&page=<?= ($i - 1) * $this->view->show ?>&categoria=<?= $this->view->categoria ?>&tamanho=<?= $this->view->tamanho ?>"><?= $i ?></a>
+                        <li class="mx-0-5"><a class="pagination__link" href="/shop?show=<?= $this->view->show ?>&sort=<?= $this->view->sort ?>&page=<?= ($i - 1) * $this->view->show ?>&categoria=<?= $this->view->categoria ?>&tamanho=<?= $this->view->tamanho ?>"><?= $i ?></a>
                         </li>
                     <?php } ?>
                 </ul>
             </div>
-          <button><i class="fas fa-arrow-left"></i>Anterior</button>
-          <button>Próximo<i class="fas fa-arrow-right"></i></button>
+
+            <button class="pagination__btn pagination__btn--prev"><i class="fas fa-arrow-left mx-0-5"></i>Anterior</button>
+            <button class="pagination__btn pagination__btn--next">Próximo<i class="fas fa-arrow-right mx-0-5"></i></button>
         </div>
-    </div>
-
-    <div class="shop__filter">
-        <?php if($this->view->categoria != '' || $this->view->tamanho != '' || $this->view->tag != '' || $this->view->preco != '') { ?>
-
-            <div class="filter-apply">
-                <h3>Filtros Aplicados</h3>
-                <ul>
-                    <li>
-                        <?php if($this->view->categoria != '') {
-                            print("Categoria: " . $this->view->categoria) ?>
-                        
-                            <a href="/shop?categoria=&tamanho=<?= $this->view->tamanho ?>&tag=<?= $this->view->tag ?>&preco=<?= $this->view->preco ?>">X</a>
-                        <?php } ?>
-                    </li>
-
-                    <li>
-                        <?php if($this->view->tamanho != '') {
-                            print("Tamanho: " . $this->view->tamanho) ?>
-
-                           <a href="/shop?categoria=<?= $this->view->categoria ?>&tamanho=&tag=<?= $this->view->tag ?>&preco=<?= $this->view->preco ?>">X</a>
-                        <?php } ?>
-                    </li>
-
-                    <li>
-                        <?php if($this->view->tag != '') {
-                            print("Tag: " . $this->view->tag) ?>
-
-                           <a href="/shop?categoria=<?= $this->view->categoria ?>&tamanho=<?= $this->view->tamanho ?>&tag=&preco=<?= $this->view->preco ?>">X</a>
-                        <?php } ?>
-                    </li>
-
-                    <li>
-                        <?php if($this->view->preco != '') {
-                            print("Preço: " . $this->view->preco) ?>
-
-                           <a href="/shop?categoria=<?= $this->view->categoria ?>&tamanho=<?= $this->view->tamanho ?>&tag=<?= $this->view->tag ?>&preco=">X</a>
-                        <?php } ?>
-                    </li>
-                </ul>
-            </div>   
-            
-        <?php } ?>
-
-        <div class="filter-cat">
-            <h3>Categories</h3>
-            <ul>
-                <li><a href="/shop?categoria=men&tamanho=<?= $this->view->tamanho ?>&tag=<?= $this->view->tag ?>&preco=<?= $this->view->preco ?>">Men</a></li>
-                <li><a href="/shop?categoria=woman&tamanho=<?= $this->view->tamanho ?>&tag=<?= $this->view->tag ?>&preco=<?= $this->view->preco ?>">Woman</a></li>
-                <li><a href="/shop?categoria=kid&tamanho=<?= $this->view->tamanho ?>&tag=<?= $this->view->tag ?>&preco=<?= $this->view->preco ?>">Kid</a></li>
-            </ul>
-        </div>
-
-        <div class="filter-price">
-            <h3>Price</h3>
-            <form method="post" action="/shop?categoria=<?= $this->view->categoria ?>&tamanho=<?= $this->view->tamanho ?>&tag=<?= $this->view->tag ?>">
-                <div>
-                    <input type="number" name="min" min="0" max="1000" placeholder="$00">
-                    <span>-</span>
-                    <input type="number" name="max" min="0" max="1000" placeholder="$90">
-                </div>
-
-                <button type="submit">Filter</button>
-            </form>
-        </div>    
-
-        <div class="filter-size">
-            <h3>Tamanho</h3>
-            <a href="/shop?tamanho=s&categoria=<?= $this->view->categoria ?>&tag=<?= $this->view->tag ?>&preco=<?= $this->view->preco ?>">S</a>
-            <a href="/shop?tamanho=m&categoria=<?= $this->view->categoria ?>&tag=<?= $this->view->tag ?>&preco=<?= $this->view->preco ?>">M</a>
-            <a href="/shop?tamanho=l&categoria=<?= $this->view->categoria ?>&tag=<?= $this->view->tag ?>&preco=<?= $this->view->preco ?>">L</a>
-            <a href="/shop?tamanho=xs&categoria=<?= $this->view->categoria ?>&tag=<?= $this->view->tag ?>&preco=<?= $this->view->preco ?>">XS</a>
-        </div>
-
-        <div class="filter-tags">
-            <h3>Tags</h3>
-
-            <a href="/shop?tag=porsche&tamanho=<?= $this->view->tamanho ?>&categoria=<?= $this->view->categoria ?>&preco=<?= $this->view->preco ?>">Porsche</a>
-            <a href="/shop?tag=jeep&tamanho=<?= $this->view->tamanho ?>&categoria=<?= $this->view->categoria ?>&preco=<?= $this->view->preco ?>">Jeep</a>
-            <a href="/shop?tag=ceda&tamanho=<?= $this->view->tamanho ?>&categoria=<?= $this->view->categoria ?>&preco=<?= $this->view->preco ?>">Ceda</a>
-            <a href="/shop?tag=caminhonete&tamanho=<?= $this->view->tamanho ?>&categoria=<?= $this->view->categoria ?>&preco=<?= $this->view->preco ?>">Caminhonete</a>
-            <a href="/shop?tag=caminhao&tamanho=<?= $this->view->tamanho ?>&categoria=<?= $this->view->categoria ?>&preco=<?= $this->view->preco ?>">Caminhao</a>
-        </div>
-    </div>
+    </div>    
 </section>
 
 <script src="js/slider-btn.js"></script>

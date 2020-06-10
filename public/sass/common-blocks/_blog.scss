@@ -14,9 +14,33 @@
         }
     }
 
+    &__quote {
+        padding-left: 1rem;
+        border-left: 2px solid #e7ab3c;
+        font-weight: bold;
+        margin-bottom: 1rem;
+    }
+
+    &__categorie {
+        color: #e7ab3c;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
     &__title {
         color: #000;
         text-transform: capitalize;
         margin: 1rem 0;
+    }
+
+    &--border-bot {
+        border-bottom: 1px solid #ddd;
+    }
+
+    &--light {
+        color: #b2b2b2;
+        margin-bottom: .5rem;
+        display: inline-block;
     }
 }

@@ -1,9 +1,14 @@
 .grid {
     display: grid;
     gap: 2rem;
+    grid-auto-rows: max-content;
 
     &--no-gap {
       gap: 0;
+    }
+
+    &--gap-1 {
+      gap: 1rem;
     }
 
     &--col-5 {
@@ -12,6 +17,14 @@
 
     &--autofit {
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+        &-200 {
+          grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        }
+    }
+
+    &--content-center {
+      justify-content: center;
     }
 
     &--self-end {
@@ -23,9 +36,14 @@
         justify-self: center;
     }
 
-    &__travel {
-      grid-template-columns: 50px 1fr;
+    &--icon {
+      grid-template-columns: 60px 1fr;
       align-items: center;
+
+      &-inverse {
+        grid-template-columns: 1fr 60px;
+        align-items: center;
+      }
     }
   
   @media (min-width: 768px) {  

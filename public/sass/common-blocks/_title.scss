@@ -7,16 +7,19 @@
         text-align: center;
     }
 
+    &-2 {
+        margin-bottom: 1.5rem;
+        font-size: 1.5rem;
+    }
+
     &__line {
         border-bottom: 3px solid #e7ab3c;
         margin: 0 auto;
         width: 70px;
     }
-    
-    &__footer {
+
+    &--white {
         color: #fff;
-        margin-bottom: 2rem;
-        font-size: 1.5rem;
     }
 
     &__tag {

@@ -1,6 +1,14 @@
 .box {
     border: 1px solid #ddd;
     padding: .5rem 2rem;
+
+    &--size-lg {
+        padding: 2.5rem 5rem;
+    }
+
+    &--rounded {
+        border-radius: 10px;
+    }
     
     &__outline {
         font-size: 1.6rem;
