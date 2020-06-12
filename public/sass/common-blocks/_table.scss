@@ -2,6 +2,10 @@
     width: 100%;
     border-collapse: collapse;
 
+    &--center {
+        text-align: center;
+    }
+
     &--align-left {
         text-align: left;
     }
@@ -11,7 +15,11 @@
     }
 
     & td, & th{
-        padding-top: 1.5rem;
-        border-bottom: 2px solid #ddd;
+        padding: 1rem;
+        border: 2px solid #ddd;
+    }
+
+    &__image {
+        max-width: 150px;
     }
 }

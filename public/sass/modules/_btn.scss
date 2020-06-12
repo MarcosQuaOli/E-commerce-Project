@@ -8,6 +8,7 @@
     font-weight: bold;
     cursor: pointer;
     display: inline-block;
+    text-align: center;
 
     &__input {
         position: absolute;
@@ -29,6 +30,12 @@
         padding: 0.2rem .5rem;
         border: 1px solid #b2b2b2;
         margin: .5rem;
+    }
+
+    &__transparent {
+        border-color: #ddd;
+        color: #ddd;
+        background-color: transparent;
     }
 
     &--rounded {

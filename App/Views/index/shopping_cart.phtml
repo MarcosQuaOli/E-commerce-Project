@@ -5,10 +5,10 @@
     <span class="mx-0-5">></span> Shopping Cart
 </section>
 
-<section class="cart container">
+<section class="page__inner page__section">
     <?php if($this->view->produtos_cart != '') { ?>
-        <div class="cart__table">
-            <table>
+        <div class="mb-2">
+            <table class="table table--center">
                 <thead>
                     <tr>
                         <th>Image</th>
@@ -22,40 +22,42 @@
 
                 <tbody>
                     <?php foreach($this->view->produtos_cart as $produto) { ?>
-                        <tr class="produtos_cart">
-                            <td><img src="<?= $produto['img'] ?>"></td>
+                        <tr class="">
+                            <td><img class="table__image" src="<?= $produto['img'] ?>"></td>
                             <td><?= $produto['nome'] ?></td>
-                            <td>$<span class="price"><?= $produto['preco'] ?></span></td>
+                            <td class="text-primary">$<span class="price"><?= $produto['preco'] ?></span></td>
                             <td class="quantidade_produto"><?= $produto['quantidade'] ?></td>
-                            <td>$<span class="re-price">60</span>.00</td>
-                            <td><a href="/remover_cart?id_produto=<?= $produto['id_produto'] ?>" class="btn-remove">x</a></td>
+                            <td class="text-primary">$<span class="re-price">60</span>.00</td>
+                            <td><a href="/remover_cart?id_produto=<?= $produto['id_produto'] ?>" class="btn-remove text-red">x</a></td>
                         </tr>
                     <?php } ?>
                 </tbody>
             </table>
         </div>
     <?php } else { ?>
-        <h2>Não tem produtos no carrinho</h2>
+        <h2 class="title mb-2">Não tem produtos no carrinho</h2>
     <?php } ?>
 
-    <div class="cart__total">
+    <div class="grid grid--col-2">
         <div class="discount">
-            <a href="/shop">Continue Shopping</a>
-            <a href="/shopping_cart">Update Cart</a>
+            <a class="btn btn__transparent" href="/shop">Continue Shopping</a>
+            <a class="btn btn--bg-black mb-2" href="/shopping_cart">Update Cart</a>
 
-            <h3>Discount Codes</h3>
-            <div>
-                <input type="text" placeholder="Enter your codes">
-                <button>Apply</button>
+            <h3 class="title-2">Discount Codes</h3>
+
+            <div class="pos-rel">
+                <input class="input" type="text" placeholder="Enter your codes">
+                <button class="btn btn__input">Apply</button>
             </div>
         </div>
 
-        <div class="total">
-            <div>
-                <p>Subtotal <span class="price-abs">$<span class="price-total"></span>.00</span></p>
-                <p>Total <span class="price-abs">$<span class="price-total"></span>.00</span></p>
+        <div class="">
+            <div class="box box__color">
+                <p class="flex my-1">Subtotal <span class="price-abs">$<span class="price-total"></span>.00</span></p>
+                <p class="flex my-1">Total <span class="price-abs text-primary">$<span class="price-total"></span>.00</span></p>
             </div>
-            <a href="/checkout">Proceed to check out</a>
+
+            <a class="btn btn--block btn--bg-black" href="/checkout">Proceed to check out</a>
         </div>
     </div>
 </section>
