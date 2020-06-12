@@ -17,6 +17,11 @@
         bottom: 0;        
         cursor: pointer;
         border: none;
+
+        &--left {
+            left: 0;
+            right: unset;
+        }
     }
 
     &__menu {        
@@ -29,7 +34,8 @@
         display: inline-block;
         padding: 0.2rem .5rem;
         border: 1px solid #b2b2b2;
-        margin: .5rem;
+        margin-right: .5rem;
+        margin-bottom: .5rem;
     }
 
     &__transparent {

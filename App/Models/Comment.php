@@ -8,7 +8,7 @@
     private $id_usuario;
     private $id_produto;
     private $texto;
-    private $data;
+    private $data_comment;
 
     public function __get($atributo) {
       return $this->$atributo;
@@ -36,7 +36,7 @@
     public function getComment() {
       $query = "
         select 
-          c.texto, c.data, u.nome
+          c.texto, c.data_comment, u.nome
         from 
           comments as c
             left join produtos as p on(c.id_produto = p.id)

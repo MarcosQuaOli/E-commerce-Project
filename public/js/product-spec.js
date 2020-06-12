@@ -2,7 +2,7 @@ $(document).ready(() => {
     $('#tab1').fadeIn();
 
     /* Specialization click */
-    $('.pro-links a').click((e) => {
+    $('.product__links').click((e) => {
         let target = $(e.target).attr('href');
         e.preventDefault();
 
@@ -19,12 +19,5 @@ $(document).ready(() => {
             $('#tab2').fadeOut();
             $(target).fadeIn();
         }
-    })
-
-    /* Img click */
-    $('.product-img a img').click((e) => {
-        let target = $(e.target).attr('src');
-        e.preventDefault();
-        $('.img-center').attr('src', target);
     })
 })

@@ -1,4 +1,14 @@
 .pagination {
+    &__pages {
+        width: 275px;
+        overflow: hidden;
+    }
+
+    &__line {
+        margin-right: 10px;
+        margin-left: 10px;
+    }
+
     &__btn {
         position: absolute;
         top: 50%;

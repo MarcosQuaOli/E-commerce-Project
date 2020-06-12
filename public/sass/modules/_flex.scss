@@ -1,4 +1,14 @@
 .flex {
   display: flex;
   justify-content: space-between;
+
+  &--content-center {
+    justify-content: center;
+  }
+
+  &--md {
+    @media (min-width: 768px) {
+      display: flex;
+    }
+  }
 }

@@ -34,8 +34,18 @@
     }
 
     &__name {
-        font-size: 1.4rem;
+        font-size: 1.5rem;
         font-weight: 400;
+        margin-bottom: .5rem;
+    }
+
+    &__stars {
+        font-size: .8rem;
+        color: #e7ab3c;
+    }
+
+    &__img {
+        height: 250px;
     }
 
     &__price {
@@ -50,6 +60,19 @@
         }
     }
 
+    &__links {
+        color: #ccc;
+        text-transform: uppercase;
+        display: block;
+        padding: 1rem;
+        font-weight: bold;
+        border: 1px solid #ddd;
+
+        @media (min-width: 992px) {
+            padding: 1.5rem 2rem;
+        }
+    }
+
     &__overlay {
         opacity: 0; 
         visibility: hidden;
@@ -59,5 +82,9 @@
     &--hover:hover &__overlay {
         opacity: 1; 
         visibility: visible;
+    }
+
+    &--bold {
+        font-weight: bold;
     }
 }

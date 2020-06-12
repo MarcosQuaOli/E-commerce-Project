@@ -5,95 +5,95 @@
     <span class="mx-0-5">></span> Details
 </section>
 
-<section class="product container">
-    <div class="product__content">
-        <div class="aside-content">
-            <div class="product-description">
-                <div class="product-img">
-                    <img class="img-center" src="<?= $this->view->produto_unico['img'] ?>">
-                    <div>
+<section class="page__inner page__section">
+    <div class="">
+        <div class="">
+            <div class="grid grid--col-2 mb-2">
+                <div>
+                    <img class="mb-2" src="<?= $this->view->produto_unico['img'] ?>">
+
+                    <div class="grid grid--3">
                         <a href="#"><img src="<?= $this->view->produto_unico['img'] ?>"></a>
                         <a href="#"><img src="<?= $this->view->produto_unico['img'] ?>"></a>
                         <a href="#"><img src="<?= $this->view->produto_unico['img'] ?>"></a>
                     </div>
                 </div>
 
-                <div class="product-text">
-                    <h5>Oranges<i class="far fa-heart"></i></h5>
+                <div class="">
                     
-                    <h3><?= $this->view->produto_unico['nome'] ?></h3>
-                    <div class="stars">
+                    
+                    <h3 class="product__name flex"><?= $this->view->produto_unico['nome'] ?><i class="far fa-heart"></i></h3>
+
+                    <div class="product__stars">
                         <i class="fa fa-star"></i>
                         <i class="fa fa-star"></i>
                         <i class="fa fa-star"></i>
                         <i class="fa fa-star"></i>
                         <i class="fa fa-star"></i>
-                        <span>(5)</span>
                     </div>
 
-                    <p><?= $this->view->produto_unico['descricao'] ?></p>
+                    <p class="my-1"><?= $this->view->produto_unico['descricao'] ?></p>
 
-                    <p>$ <?= $this->view->produto_unico['preco'] ?></p>
+                    <p class="product__price">$ <?= $this->view->produto_unico['preco'] ?></p>
 
-                    <p>
-                        Color 
-                        <span></span><span></span><span></span>
-                    </p>
-
-                    <div class="size">
-                        <a href="#">S</a>
-                        <a href="#">M</a>
-                        <a href="#">L</a>
-                        <a href="#">XS</a>
+                    <div class="my-1">
+                        <a class="btn__box" href="#">S</a>
+                        <a class="btn__box" href="#">M</a>
+                        <a class="btn__box" href="#">L</a>
+                        <a class="btn__box" href="#">XS</a>
                     </div>
 
-                    <form method="post" action="/autenticar_cart?id_produto=<?= $this->view->produto_unico['id'] ?>">
-                        <div class="product-add">                        
-                            <div>                            
-                                <button class="btn-sub"><i class="fas fa-minus"></i></button>
-                                <input name="quantidade" type="text" value="1">
-                                <button class="btn-some"><i class="fas fa-plus"></i></button>
+                    <div class="my-1">
+                        <form method="post" action="/autenticar_cart?id_produto=<?= $this->view->produto_unico['id'] ?>">
+                            <div class="grid grid--col-1-2">                        
+                                <div class="pos-rel">                            
+                                    <button class="btn btn__input btn__input--left btn-sub"><i class="fas fa-minus"></i></button>
+                                    <input class="input align-center" name="quantidade" type="text" value="1">
+                                    <button class="btn btn__input btn-some"><i class="fas fa-plus"></i></button>
+                                </div>
+    
+                                <div><button class="btn btn--block" type="submit">Add to cart</a></button></div>                        
                             </div>
-                            <div><button type="submit">Add to cart</a></button></div>                        
-                        </div>
-                        <?php if(isset($_GET['erro']) && $_GET['erro'] == 1) { ?>
-                            <p style="color: red; padding: 1rem 0">Faça login antes de adicionar um produto ao carrinho!!</p>
-                        <?php } ?>
+    
+                            <?php if(isset($_GET['erro']) && $_GET['erro'] == 1) { ?>
+                                <p style="color: red; padding: 1rem 0">Faça login antes de adicionar um produto ao carrinho!!</p>
+                            <?php } ?>
+    
+                            <?php if(isset($_GET['erro']) && $_GET['erro'] == 2) { ?>
+                                <p style="color: red; padding: 1rem 0">O produto ja esta no carrinho!!</p>
+                            <?php } ?>
+                        </form>
+                    </div>
 
-                        <?php if(isset($_GET['erro']) && $_GET['erro'] == 2) { ?>
-                            <p style="color: red; padding: 1rem 0">O produto ja esta no carrinho!!</p>
-                        <?php } ?>
-                    </form>
+                    <p><span class="product--bold">Categories:</span> More Accessories, Wallets & Cases</p>
+                    <p class="mb-2"><span class="product--bold">Tags:</span> Clothing, T-shirt, Woman</p>
 
-                    <p><span>Categories:</span> More Accessories, Wallets & Cases</p>
-                    <p><span>Tags:</span> Clothing, T-shirt, Woman</p>
-
-                    <div class="product-social">
-                        <p>Sku : 00<?= $this->view->produto_unico['id'] ?></p>
+                    <div class="flex">
+                        <p><span class="product--bold">Sku:</span> 00<?= $this->view->produto_unico['id'] ?></p>
 
                         <div>
-                            <a href="#"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#"><i class="fab fa-twitter"></i></a>
-                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a class="link" href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a class="link" href="#"><i class="fab fa-twitter"></i></a>
+                            <a class="link" href="#"><i class="fab fa-linkedin-in"></i></a>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="product-spec">
-                <div class="pro-links">
-                    <ul>
-                        <li><a href="#tab1">Description</a></li>
-                        <li><a href="#tab2">Specifications</a></li>
-                        <li><a href="#tab3">Customer Reviews (<?= count($this->view->comments) ?>)</a></li>
+            <div>
+                <div class="mb-2">
+                    <ul class="flex--md flex--content-center">
+                        <li><a class="product__links" href="#tab1">Description</a></li>
+                        <li><a class="product__links" href="#tab2">Specifications</a></li>
+                        <li><a class="product__links" href="#tab3">Customer Reviews (<?= count($this->view->comments) ?>)</a></li>
                     </ul>
                 </div>
 
                 <div>
-                    <div id="tab1">
-                        <div class="tab1">
+                    <div id="tab1" class="d-none page__section">
+                        <div class="grid grid--col-3-1">
                             <div>
-                                <h4>Introduction</h4>
+                                <h4 class="title-2">Introduction</h4>
                                 <p><?= $this->view->produto_unico['descricao'] ?></p>
                             </div>
 
@@ -103,81 +103,70 @@
                         </div>
                     </div>
 
-                    <div id="tab2">
-                        <table>
+                    <div id="tab2" class="d-none page__section">
+                        <table class="table">
                             <tr>
-                                <th>Customer Rating</th>
-                                <td class="stars">
+                                <th class="table--align-left">Customer Rating</th>
+                                <td class="product__stars table--align-right">
                                     <i class="fa fa-star"></i>
                                     <i class="fa fa-star"></i>
                                     <i class="fa fa-star"></i>
                                     <i class="fa fa-star"></i>
                                     <i class="fa fa-star"></i>
-                                    <span>(5)</span>
                                 </td>
                             </tr>
 
                             <tr>
-                                <th>Price</th>
-                                <td>$ <?= $this->view->produto_unico['preco'] ?></td>
+                                <th class="table--align-left">Price</th>
+                                <td class="product__price table--align-right">$ <?= $this->view->produto_unico['preco'] ?></td>
                             </tr>
 
                             <tr>
-                                <th>Add to cart</th>
-                                <td>+ Add to cart</td>
+                                <th class="table--align-left">Avaibility</th>
+                                <td class="table--align-right">22 in stock</td>
                             </tr>
 
                             <tr>
-                                <th>Avaibility</th>
-                                <td>22 in stock</td>
+                                <th class="table--align-left">Weight</th>
+                                <td class="table--align-right">1,3kg</td>
                             </tr>
 
                             <tr>
-                                <th>Weight</th>
-                                <td>1,3kg</td>
+                                <th class="table--align-left">Size</th>
+                                <td class="table--align-right"><?= $this->view->produto_unico['tamanho'] ?></td>
                             </tr>
 
                             <tr>
-                                <th>Size</th>
-                                <td><?= $this->view->produto_unico['tamanho'] ?></td>
-                            </tr>
-
-                            <tr>
-                                <th>Color</th>
-                                <td><span></span></td>
-                            </tr>
-
-                            <tr>
-                                <th>Sku</th>
-                                <td>00<?= $this->view->produto_unico['id'] ?></td>
+                                <th class="table--align-left">Sku</th>
+                                <td class="table--align-right">00<?= $this->view->produto_unico['id'] ?></td>
                             </tr>
                         </table>
                     </div>
 
-                    <div id="tab3">
+                    <div id="tab3" class="d-none page__section">
                         <div>
-                            <h3><?= count($this->view->comments) ?> Comments</h3>
+                            <h3 class="title-2"><?= count($this->view->comments) ?> Comments</h3>
                             <?php foreach($this->view->comments as $comment) { ?>
-                                <div class="comment-item">
+                                <div class="grid grid--icon mb-2">
                                     <img src="img/product-single/avatar-1.png">
 
                                     <div>
-                                        <div class="stars">
+                                        <div class="product__stars">
                                             <i class="fa fa-star"></i>
                                             <i class="fa fa-star"></i>
                                             <i class="fa fa-star"></i>
                                             <i class="fa fa-star"></i>
                                             <i class="fa fa-star"></i>
                                         </div>
-                                        <h4><?= $comment['nome'] ?><span> - <?= $comment['data'] ?></span></h4>
+                                        <h4><?= $comment['nome'] ?><span> | <?= $comment['data_comment'] ?></span></h4>
                                         <p><?= $comment['texto'] ?></p>
                                     </div>
                                 </div>
                             <?php } ?>                           
 
-                            <div class="comment-rating">
+                            <div class="mb-2">
                                 <p>Your Rating</p>
-                                <div class="stars">
+                                <div class="product__stars">
                                     <i class="fa fa-star"></i>
                                     <i class="fa fa-star"></i>
                                     <i class="fa fa-star"></i>
@@ -187,12 +176,12 @@
                             </div>
                         </div>                        
                         
-                        <div class="comment-details">
-                            <h3>Leave a comment</h3>
+                        <div>
+                            <h3 class="title-2">Leave a comment</h3>
             
                             <form method="post" action="/comment?id_produto=<?= $this->view->produto_unico['id'] ?>">
-                                <textarea name="texto" rows="6" placeholder="Messages"></textarea>
-                                <button type="submit">Send Message</button>
+                                <textarea class="input mb-2" name="texto" rows="6" placeholder="Messages"></textarea>
+                                <button class="btn" type="submit">Send Message</button>
                             </form>
                             <?php if(isset($_GET['erro_comment']) && $_GET['erro_comment'] == 'true') { ?>
                                 <p style="color: red; padding: 1rem 0;">Faça login antes de deixar um comentario.</p>
@@ -204,23 +193,22 @@
         </div>
     </div>
 
-    <div class="produtos-relacionados"><h2>Produtos Relacionados</h2></div>
-    <div class="shop__gallery gallery-product">        
+    <h2 class="title title--center">Produtos Relacionados</h2>
+
+    <div class="grid grid--col-4">        
         <?php foreach($this->view->produto_relacionado as $produto) { ?>
-            <div class="gallery-itens" id="<?= $produto['id'] ?>">
-                <div class="gallery-img">
-                    <img src="<?= $produto['img'] ?>">
+            <div class="product" id="<?= $produto['id'] ?>">
+                <div class="product--hover pos-rel">
+                    <img class="product__img" src="<?= $produto['img'] ?>">
                     
-                    <div class="gallery-overlay">
-                        <a href="#"><i class="far fa-heart"></i></a>
+                    <div class="product__overlay">
+                        <a href="#"><i class="far fa-heart product__icon product__icon--white"></i></a>
                     </div>
                 </div>
 
-                <div class="gallery-text">
-                    <small><?= $produto['tag'] ?></small>
-                    <h4><?= $produto['nome'] ?></h4>
-                    <p>$<?= $produto['preco'] ?></p>
-                </div>
+                <small class="product__tag"><?= $produto['tag'] ?></small>
+                <h4 class="product__name"><?= $produto['nome'] ?></h4>
+                <p class="product__price">$<?= $produto['preco'] ?></p>
             </div>    
         <?php } ?>                                                                    
     </div>
