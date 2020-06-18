@@ -6,10 +6,10 @@
 </section>
 
 <section class="page__inner page__section">
-    <div class="">
-        <div class="">
+    <div>
+        <div>
             <div class="grid grid--col-2 mb-2">
-                <div>
+                <div class="img__product">
                     <img class="mb-2" src="<?= $this->view->produto_unico['img'] ?>">
 
                     <div class="grid grid--3">
@@ -19,8 +19,7 @@
                     </div>
                 </div>
 
-                <div class="">
-                    
+                <div>                    
                     
                     <h3 class="product__name flex"><?= $this->view->produto_unico['nome'] ?><i class="far fa-heart"></i></h3>
 
@@ -97,7 +96,7 @@
                                 <p><?= $this->view->produto_unico['descricao'] ?></p>
                             </div>
 
-                            <div>
+                            <div class="img__product">
                                 <img src="<?= $this->view->produto_unico['img'] ?>">
                             </div>
                         </div>

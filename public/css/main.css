@@ -259,6 +259,10 @@ body {
     display: block;
     padding-top: 1rem;
     padding-bottom: 1rem; }
+  .link__copy {
+    color: #b2b2b2; }
+    .link__copy:hover {
+      color: #e7ab3c; }
 
 .my-1 {
   margin-top: 1rem;
@@ -546,6 +550,8 @@ body {
     background-image: url(../img/products/man-large.jpg); }
   .img--women {
     background-image: url(../img/products/women-large.jpg); }
+  .img__product {
+    margin: 0 15%; }
 
 .gallery {
   width: 80vw; }
@@ -575,6 +581,17 @@ body {
     font-size: .8rem;
     background-color: #76bc42;
     padding: .2rem; }
+  .product__show {
+    text-align: center;
+    margin-top: 1rem; }
+    @media (min-width: 768px) {
+      .product__show {
+        margin-top: 0;
+        right: 0;
+        position: absolute;
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+                transform: translateY(-50%); } }
   .product__icon {
     position: absolute;
     color: #212529;
@@ -595,8 +612,9 @@ body {
   .product__stars {
     font-size: .8rem;
     color: #e7ab3c; }
-  .product__img {
-    height: 250px; }
+  @media (min-width: 768px) {
+    .product__img {
+      height: 250px; } }
   .product__price {
     font-size: 1.2rem;
     color: #e7ab3c;
@@ -772,6 +790,7 @@ body {
   margin-right: 10px;
   margin-left: 10px; }
 .pagination__btn {
+  display: none;
   position: absolute;
   top: 50%;
   -webkit-transform: translateY(-50%);
@@ -781,6 +800,9 @@ body {
   border: none;
   padding: 1rem .4rem;
   font-size: 1.2rem; }
+  @media (min-width: 768px) {
+    .pagination__btn {
+      display: block; } }
   .pagination__btn--prev {
     left: 10px; }
   .pagination__btn--next {

@@ -87,8 +87,8 @@
         </div>
     </div>
 
-    <div class="shop__content"> 
-        <div class="flex mb-2 pos-rel">
+    <div> 
+        <div class="mb-2 pos-rel">
             <div>
                 <form method="post" action="/shop?categoria=<?= $this->view->categoria ?>&preco=<?= $this->view->preco ?>&tamanho=<?= $this->view->tamanho ?>&tag=<?= $this->view->tag ?>">                            
                     <select class="input__select" name="sort" onchange="this.form.submit()">  
@@ -106,7 +106,7 @@
                 </form>
             </div>
 
-            <div class="center-y right-0">
+            <div class="product__show">
                 <p>
                     Show 
                         <?= ($this->view->num_page - $this->view->show) + $this->view->show ?>

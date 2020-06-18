@@ -73,4 +73,12 @@
         padding-top: 1rem;
         padding-bottom: 1rem;
     }
+
+    &__copy {
+        color: #b2b2b2;
+
+        &:hover {
+            color: $color-primary;
+        }
+    }
 }

@@ -1,4 +1,4 @@
-CREATE DATABASE ecommerce_fashi;
+CREATE DATABASE ecommerce_fashi CHARACTER SET utf8 COLLATE utf8_general_ci;
 
 USE ecommerce_fashi;
 
@@ -26,7 +26,7 @@ CREATE TABLE comments(
     id_usuario int not null,
     id_produto int not null,
     texto text not null,
-    data_comment date not null DEFAULT CURRENT_TIMESTAMP
+    created_at datetime not null DEFAULT CURRENT_TIMESTAMP
 );
 
 CREATE TABLE produtos_cart(
